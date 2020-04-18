@@ -43,6 +43,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @objc func keyboardWillShow(_ notification:NSNotification){
         let keyboardHeight = ((notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as Any) as AnyObject).cgRectValue?.height
         messageTextField.frame.origin.y = screenSize.height - keyboardHeight! - messageTextField.frame.height
+        sendButton.frame.origin.y = screenSize.height - keyboardHeight! - sendButton.frame.height
         
     }
     @objc func keyboardWillHide(_ notification:NSNotification){
@@ -86,7 +87,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.messageLabel.text = chatArray[indexPath.row].message
         cell.userNameLabel.text = chatArray[indexPath.row].sender
         cell.iconImageView.image = UIImage(named: "iconImage")
-        if cell.userNameLabel.text == Auth.auth().currentUser?.email as! String{
+        if cell.userNameLabel.text == (Auth.auth().currentUser?.email!){
             cell.messageLabel.backgroundColor = UIColor.flatGreen()
             cell.messageLabel.layer.cornerRadius = 10
             cell.messageLabel.layer.masksToBounds = true
