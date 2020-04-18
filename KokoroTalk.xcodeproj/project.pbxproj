@@ -3,19 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		894F256F24484AAE00FAB922 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F256E24484AAE00FAB922 /* RegisterViewController.swift */; };
+		894F25712449819A00FAB922 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F25702449819900FAB922 /* LoginViewController.swift */; };
+		894F2574244984DC00FAB922 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F2572244984DC00FAB922 /* CustomCell.swift */; };
+		894F2575244984DC00FAB922 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894F2573244984DC00FAB922 /* CustomCell.xib */; };
+		894F25772449894F00FAB922 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F25762449894F00FAB922 /* ChatViewController.swift */; };
+		894F2579244AB07C00FAB922 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F2578244AB07C00FAB922 /* Message.swift */; };
+		894F257B244AD98F00FAB922 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 894F257A244AD98F00FAB922 /* GoogleService-Info.plist */; };
+		894F257D244ADB1500FAB922 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 894F257C244ADB1500FAB922 /* loading.json */; };
 		898CC47D2448308600F19E2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898CC47C2448308600F19E2F /* AppDelegate.swift */; };
 		898CC47F2448308600F19E2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898CC47E2448308600F19E2F /* SceneDelegate.swift */; };
 		898CC4812448308600F19E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898CC4802448308600F19E2F /* ViewController.swift */; };
 		898CC4842448308600F19E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898CC4822448308600F19E2F /* Main.storyboard */; };
 		898CC4862448308A00F19E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 898CC4852448308A00F19E2F /* Assets.xcassets */; };
 		898CC4892448308B00F19E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898CC4872448308B00F19E2F /* LaunchScreen.storyboard */; };
+		FBCBD6A9BC369557FB54F6AF /* Pods_KokoroTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480725CCC799C94BBD33FAFA /* Pods_KokoroTalk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480725CCC799C94BBD33FAFA /* Pods_KokoroTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KokoroTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		894F256E24484AAE00FAB922 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		894F25702449819900FAB922 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		894F2572244984DC00FAB922 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		894F2573244984DC00FAB922 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		894F25762449894F00FAB922 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		894F2578244AB07C00FAB922 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		894F257A244AD98F00FAB922 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		894F257C244ADB1500FAB922 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		898CC4792448308600F19E2F /* KokoroTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KokoroTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		898CC47C2448308600F19E2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		898CC47E2448308600F19E2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +42,8 @@
 		898CC4852448308A00F19E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		898CC4882448308B00F19E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		898CC48A2448308B00F19E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C688CAC526A6979F5EF31AB2 /* Pods-KokoroTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KokoroTalk.debug.xcconfig"; path = "Target Support Files/Pods-KokoroTalk/Pods-KokoroTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		DAE7A78B347AA56914487167 /* Pods-KokoroTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KokoroTalk.release.xcconfig"; path = "Target Support Files/Pods-KokoroTalk/Pods-KokoroTalk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBCBD6A9BC369557FB54F6AF /* Pods_KokoroTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E1F30C4BF46EB4F3C00CC6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C688CAC526A6979F5EF31AB2 /* Pods-KokoroTalk.debug.xcconfig */,
+				DAE7A78B347AA56914487167 /* Pods-KokoroTalk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		529ED3C20ECAABA3CE3F5AAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				480725CCC799C94BBD33FAFA /* Pods_KokoroTalk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8982A39C2448480A00A5AA79 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				898CC47C2448308600F19E2F /* AppDelegate.swift */,
+				898CC47E2448308600F19E2F /* SceneDelegate.swift */,
+				898CC4802448308600F19E2F /* ViewController.swift */,
+				894F256E24484AAE00FAB922 /* RegisterViewController.swift */,
+				894F25702449819900FAB922 /* LoginViewController.swift */,
+				894F25762449894F00FAB922 /* ChatViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8982A39D2448481B00A5AA79 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				898CC4822448308600F19E2F /* Main.storyboard */,
+				898CC4852448308A00F19E2F /* Assets.xcassets */,
+				894F2572244984DC00FAB922 /* CustomCell.swift */,
+				894F2573244984DC00FAB922 /* CustomCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8982A39E2448482300A5AA79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				894F2578244AB07C00FAB922 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		898CC4702448308500F19E2F = {
 			isa = PBXGroup;
 			children = (
 				898CC47B2448308600F19E2F /* KokoroTalk */,
 				898CC47A2448308600F19E2F /* Products */,
+				4E1F30C4BF46EB4F3C00CC6C /* Pods */,
+				529ED3C20ECAABA3CE3F5AAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +128,13 @@
 		898CC47B2448308600F19E2F /* KokoroTalk */ = {
 			isa = PBXGroup;
 			children = (
-				898CC47C2448308600F19E2F /* AppDelegate.swift */,
-				898CC47E2448308600F19E2F /* SceneDelegate.swift */,
-				898CC4802448308600F19E2F /* ViewController.swift */,
-				898CC4822448308600F19E2F /* Main.storyboard */,
-				898CC4852448308A00F19E2F /* Assets.xcassets */,
+				8982A39E2448482300A5AA79 /* Model */,
+				8982A39D2448481B00A5AA79 /* View */,
+				8982A39C2448480A00A5AA79 /* Controller */,
 				898CC4872448308B00F19E2F /* LaunchScreen.storyboard */,
+				894F257C244ADB1500FAB922 /* loading.json */,
 				898CC48A2448308B00F19E2F /* Info.plist */,
+				894F257A244AD98F00FAB922 /* GoogleService-Info.plist */,
 			);
 			path = KokoroTalk;
 			sourceTree = "<group>";
@@ -74,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 898CC48D2448308B00F19E2F /* Build configuration list for PBXNativeTarget "KokoroTalk" */;
 			buildPhases = (
+				3E4014D4D34493724A81BAF0 /* [CP] Check Pods Manifest.lock */,
 				898CC4752448308500F19E2F /* Sources */,
 				898CC4762448308500F19E2F /* Frameworks */,
 				898CC4772448308500F19E2F /* Resources */,
+				E0D973BBAE11D181E7455EA4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,11 +201,56 @@
 			files = (
 				898CC4892448308B00F19E2F /* LaunchScreen.storyboard in Resources */,
 				898CC4862448308A00F19E2F /* Assets.xcassets in Resources */,
+				894F257D244ADB1500FAB922 /* loading.json in Resources */,
+				894F257B244AD98F00FAB922 /* GoogleService-Info.plist in Resources */,
+				894F2575244984DC00FAB922 /* CustomCell.xib in Resources */,
 				898CC4842448308600F19E2F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E4014D4D34493724A81BAF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KokoroTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0D973BBAE11D181E7455EA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KokoroTalk/Pods-KokoroTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KokoroTalk/Pods-KokoroTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KokoroTalk/Pods-KokoroTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		898CC4752448308500F19E2F /* Sources */ = {
@@ -141,6 +260,11 @@
 				898CC4812448308600F19E2F /* ViewController.swift in Sources */,
 				898CC47D2448308600F19E2F /* AppDelegate.swift in Sources */,
 				898CC47F2448308600F19E2F /* SceneDelegate.swift in Sources */,
+				894F25772449894F00FAB922 /* ChatViewController.swift in Sources */,
+				894F25712449819A00FAB922 /* LoginViewController.swift in Sources */,
+				894F2579244AB07C00FAB922 /* Message.swift in Sources */,
+				894F2574244984DC00FAB922 /* CustomCell.swift in Sources */,
+				894F256F24484AAE00FAB922 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +406,7 @@
 		};
 		898CC48E2448308B00F19E2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C688CAC526A6979F5EF31AB2 /* Pods-KokoroTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -294,12 +419,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryo7032.KokoroTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		898CC48F2448308B00F19E2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAE7A78B347AA56914487167 /* Pods-KokoroTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,7 +438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryo7032.KokoroTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
