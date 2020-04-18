@@ -86,13 +86,14 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         cell.messageLabel.text = chatArray[indexPath.row].message
         cell.userNameLabel.text = chatArray[indexPath.row].sender
-        cell.iconImageView.image = UIImage(named: "iconImage")
         if cell.userNameLabel.text == (Auth.auth().currentUser?.email!){
             cell.messageLabel.backgroundColor = UIColor.flatGreen()
+            cell.iconImageView.image = UIImage(named: "iconImage")
             cell.messageLabel.layer.cornerRadius = 10
             cell.messageLabel.layer.masksToBounds = true
         }else{
             cell.messageLabel.backgroundColor = UIColor.flatPink()
+            cell.iconImageView.image = UIImage(named: "iconImage2")
             cell.messageLabel.layer.cornerRadius = 10
             cell.messageLabel.layer.masksToBounds = true
         }

@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
     
      func startAnimation(){
          let animation = Animation.named("loading")
-         animationView.frame = CGRect(x: 80, y: 150, width: view.frame.size.width/2, height: view.frame.size.height/2)
+        animationView.frame = CGRect(x: 80, y: 150, width: view.frame.size.width/1.5, height: view.frame.size.height/1.5)
     
          animationView.animation = animation
          animationView.contentMode = .scaleAspectFit
