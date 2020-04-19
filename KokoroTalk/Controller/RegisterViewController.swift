@@ -14,6 +14,7 @@ class RegisterViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var userName: UITextField!
     let animationView = AnimationView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,10 @@ class RegisterViewController: UIViewController {
 //                アニメーションのストップ
                 self.stopAnimation()
 //                チャット画面に遷移させる
-                self.performSegue(withIdentifier: "chat", sender: nil)
+//                self.performSegue(withIdentifier: "chat", sender: nil)
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "chat") as! ChatViewController
+                nextVC.userNameLabel = self.userName.text!
+                self.navigationController?.pushViewController(nextVC, animated: true)
             }
         }
     }

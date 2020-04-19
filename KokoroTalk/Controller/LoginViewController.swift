@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var userName: UITextField!
     let animationView = AnimationView()
 
     override func viewDidLoad() {
@@ -31,12 +32,16 @@ class LoginViewController: UIViewController {
             }else{
                 print("ログイン成功")
                 self.stopAnimation()
-                self.performSegue(withIdentifier: "chat", sender: nil)
+//                self.performSegue(withIdentifier: "chat", sender: nil)
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "chat") as! ChatViewController
+                nextVC.userNameLabel = self.userName.text!
+                self.navigationController?.pushViewController(nextVC, animated: true)
+                
                 
             }
         }
     }
-    
+
      func startAnimation(){
          let animation = Animation.named("loading")
         animationView.frame = CGRect(x: 80, y: 150, width: view.frame.size.width/1.5, height: view.frame.size.height/1.5)

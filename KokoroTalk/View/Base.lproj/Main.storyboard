@@ -79,7 +79,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mS2-mQ-wcM">
-                                <rect key="frame" x="67" y="297" width="280" height="41"/>
+                                <rect key="frame" x="67" y="342" width="280" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="ログイン"/>
@@ -87,6 +87,12 @@
                                     <action selector="login:" destination="udi-6z-ewn" eventType="touchUpInside" id="BtD-ZU-YN4"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQC-bw-Ag5">
+                                <rect key="frame" x="67" y="277" width="280" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="9ay-GE-zMt"/>
@@ -95,6 +101,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Wv3-Gx-uiB" id="Q6a-VT-XaZ"/>
                         <outlet property="passwordTextField" destination="EhG-iu-MV9" id="edx-LZ-QGw"/>
+                        <outlet property="userName" destination="lQC-bw-Ag5" id="qQo-3H-RHM"/>
                         <segue destination="8gi-GJ-v7L" kind="show" identifier="chat" id="cou-K6-Tgn"/>
                     </connections>
                 </viewController>
@@ -105,7 +112,7 @@
         <!--Chat View Controller-->
         <scene sceneID="giR-cc-O8i">
             <objects>
-                <viewController id="8gi-GJ-v7L" customClass="ChatViewController" customModule="KokoroTalk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8gi-GJ-v7L" customClass="ChatViewController" customModule="KokoroTalk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yko-2B-fD8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,6 +173,12 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-v0-bwG">
+                                <rect key="frame" x="67" y="276" width="280" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvb-DW-1Iq">
                                 <rect key="frame" x="67" y="162" width="280" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -179,7 +192,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QT-C4-K53">
-                                <rect key="frame" x="67" y="293" width="280" height="41"/>
+                                <rect key="frame" x="67" y="341" width="280" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="新規登録"/>
@@ -195,6 +208,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Dvb-DW-1Iq" id="7LS-VJ-fiZ"/>
                         <outlet property="passwordTextField" destination="DBU-Cx-rro" id="REB-nu-73C"/>
+                        <outlet property="userName" destination="W9S-v0-bwG" id="hC7-05-nPQ"/>
                         <segue destination="8gi-GJ-v7L" kind="show" identifier="chat" id="Y5u-gu-IGk"/>
                     </connections>
                 </viewController>

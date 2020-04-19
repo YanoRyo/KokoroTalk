@@ -15,6 +15,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
+    var userNameLabel:String = ""
     @IBOutlet weak var sendButton: UIButton!
     
 //    スクリーンサイズ
@@ -48,6 +49,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     @objc func keyboardWillHide(_ notification:NSNotification){
         messageTextField.frame.origin.y = screenSize.height - messageTextField.frame.height
+        sendButton.frame.origin.y = screenSize.height  - sendButton.frame.height
         
         guard let rect = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
             let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else{return}
@@ -85,17 +87,19 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         cell.messageLabel.text = chatArray[indexPath.row].message
-        cell.userNameLabel.text = chatArray[indexPath.row].sender
+        cell.userNameLabel.text = userNameLabel
         if cell.userNameLabel.text == (Auth.auth().currentUser?.email!){
             cell.messageLabel.backgroundColor = UIColor.flatGreen()
             cell.iconImageView.image = UIImage(named: "iconImage")
             cell.messageLabel.layer.cornerRadius = 10
             cell.messageLabel.layer.masksToBounds = true
+            cell.selectionStyle = .none
         }else{
             cell.messageLabel.backgroundColor = UIColor.flatPink()
             cell.iconImageView.image = UIImage(named: "iconImage2")
             cell.messageLabel.layer.cornerRadius = 10
             cell.messageLabel.layer.masksToBounds = true
+            cell.selectionStyle = .none
         }
         return cell
     }
@@ -134,7 +138,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             
             let snapShotData = snapShot.value as! AnyObject
             let text = snapShotData.value(forKey: "message")
-            let sender = snapShotData.value(forKey: "sender")
+            _ = snapShotData.value(forKey: "sender")
             
             let message = Message()
             message.message = text as! String
