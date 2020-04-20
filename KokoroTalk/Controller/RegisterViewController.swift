@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userName: UITextField!
     let animationView = AnimationView()
+    var alertController:UIAlertController!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +31,9 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil{
                 print(error as Any)
+//                アラートを出す
+                self.alert(title: "error", message: "Email,Passwordをもう一度確認してください")
+                self.stopAnimation()
             }else{
                 print("Userの登録が完了しました")
 //                アニメーションのストップ
@@ -55,6 +59,13 @@ class RegisterViewController: UIViewController {
     }
     func stopAnimation(){
         animationView.removeFromSuperview()
+    }
+    func alert(title:String,message:String){
+        
+        alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertController,animated: true)
+        
     }
 
 }

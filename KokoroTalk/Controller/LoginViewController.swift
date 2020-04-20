@@ -10,12 +10,14 @@ import UIKit
 import Firebase
 import Lottie
 
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userName: UITextField!
     let animationView = AnimationView()
+    var alertController:UIAlertController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,10 @@ class LoginViewController: UIViewController {
             
             if error != nil{
                 print(error as Any)
+//                アラートを出す
+                self.alert(title: "ログイン失敗", message: "Email,Passwordに誤りがあります")
+                self.stopAnimation()
+       
             }else{
                 print("ログイン成功")
                 self.stopAnimation()
@@ -55,5 +61,13 @@ class LoginViewController: UIViewController {
      func stopAnimation(){
          animationView.removeFromSuperview()
      }
+    
+    func alert(title:String,message:String){
+        
+        alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertController,animated: true)
+        
+    }
 
 }
