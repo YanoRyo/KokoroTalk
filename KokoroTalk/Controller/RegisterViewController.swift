@@ -15,12 +15,57 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var anniversaryTextField: UITextField!
+    
+    var datePicker:UIDatePicker = UIDatePicker()
     let animationView = AnimationView()
     var alertController:UIAlertController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        ピッカーの設定
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.locale = Locale.current
+        anniversaryTextField.inputView = datePicker
+        //        決定バーの生成
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
 
-        // Do any additional setup after loading the view.
+        toolbar.setItems([spacelItem,doneItem], animated: true)
+        //        インプットビュー設定
+        anniversaryTextField.inputView = datePicker
+        anniversaryTextField.inputAccessoryView = toolbar
+
+    }
+    
+    @objc func done(){
+        
+        anniversaryTextField.endEditing(true)
+    //        日時のフォーマット
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        anniversaryTextField.text = "\(formatter.string(from: datePicker.date))"
+    }
+
+    func calculateDate(){
+
+        let cal = Calendar(identifier: .gregorian)
+            // 現在日時を dt に代入
+
+        let dt1 = Date()
+        print(anniversaryTextField as Any)
+
+            // 過去の日にち - dt1 を計算
+
+        let diff1 = cal.dateComponents([.day], from: datePicker.date, to: dt1)
+
+        print("差は \(diff1.day!) 日")
+        anniversaryTextField.text = String(diff1.day!)
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "chat") as! ChatViewController
+        nextVC.hartLabel = String(diff1.day!)
+        navigationController?.pushViewController(nextVC, animated: true)
+
     }
     
     @IBAction func registerNewUser(_ sender: Any) {
@@ -39,7 +84,7 @@ class RegisterViewController: UIViewController {
 //                アニメーションのストップ
                 self.stopAnimation()
 //                チャット画面に遷移させる
-//                self.performSegue(withIdentifier: "chat", sender: nil)
+                self.calculateDate()
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "chat") as! ChatViewController
                 nextVC.userNameLabel = self.userName.text!
                 self.navigationController?.pushViewController(nextVC, animated: true)

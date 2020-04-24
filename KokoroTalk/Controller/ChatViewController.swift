@@ -16,12 +16,14 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     var userNameLabel:String = ""
+    var hartLabel:String = ""
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var countLabel: UILabel!
     
 //    スクリーンサイズ
     let screenSize = UIScreen.main.bounds.size
     var chatArray = [Message]()
-    
+    var titleString:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,8 +41,12 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         fetchChatData()
         tableView.separatorStyle = .none
         
+        countLabel.text = hartLabel
+        navigationController?.isNavigationBarHidden = true
+        
         
     }
+  
     @objc func keyboardWillShow(_ notification:NSNotification){
         let keyboardHeight = ((notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as Any) as AnyObject).cgRectValue?.height
         messageTextField.frame.origin.y = screenSize.height - keyboardHeight! - messageTextField.frame.height
@@ -136,7 +142,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        新しく更新があった時だけ取得したい
         fetchDataRef.observe(.childAdded) { (snapShot) in
             
-            let snapShotData = snapShot.value as! AnyObject
+            let snapShotData = snapShot.value as AnyObject
             let text = snapShotData.value(forKey: "message")
             _ = snapShotData.value(forKey: "sender")
             
